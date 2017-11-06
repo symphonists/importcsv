@@ -25,8 +25,8 @@ class ImportDriver_memberpassword extends ImportDriver_default
      */
     public function import($value, $entry_id = null)
     {
-        $data = $this->field->processRawFieldData($value, $this->field->__OK__);
-        // Reset the value, to prevent double md5:
+        $data = $this->field->processRawFieldData(array('password' => $value), $this->field->__OK__);
+        // Reset the value, to prevent double hashing
         $data['password'] = trim($value);
 
         return $data;
