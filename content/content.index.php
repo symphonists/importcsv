@@ -11,7 +11,7 @@ class contentExtensionImportcsvIndex extends AdministrationPage
     }
 */
 
-    public function build()
+    public function build(array $context = Array())
     {
         parent::build();
         parent::addStylesheetToHead(URL . '/extensions/importcsv/assets/importcsv.css');
