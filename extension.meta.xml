@@ -20,6 +20,12 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.0.4" date="2018-01-10" min="2.6.0" max="2.x.x">
+			- Array() —> array() 
+		</release>
+		<release version="1.0.3" date="2017-12-19" min="2.6.0" max="2.x.x">
+			- Include @wdebusschere’s fix `Allow custom backendurl URL -> SYMPHONY_URL` 
+		</release>
 		<release version="1.0.2" date="2017-11-07" min="2.6.0" max="2.x.x">
 			- PHP7 compatibility
 		</release>
