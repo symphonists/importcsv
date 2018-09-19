@@ -54,7 +54,7 @@ class contentExtensionImportcsvIndex extends AdministrationPage
         $sectionsNode = new XMLElement('sections');
         $sections = SectionManager::fetch();
         foreach ($sections as $section) {
-            $sectionsNode->appendChild(new XMLElement('section', $section->get('name'), array('id' => $section->get('id'))));
+            $sectionsNode->appendChild(new XMLElement('section', General::sanitize($section->get('name')), array('id' => $section->get('id'))));
         }
         $xml->appendChild($sectionsNode);
 
