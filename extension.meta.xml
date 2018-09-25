@@ -20,6 +20,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.0.3" date="2018-09-24" min="2.6.0" max="2.x.x">
+			- Fix page name sanitization issue
+		</release>
 		<release version="1.0.2" date="2018-01-10" min="2.6.0" max="2.x.x">
 			- Allow custom backend URL
 			- PHP7 compatibility
