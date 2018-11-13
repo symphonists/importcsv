@@ -389,7 +389,7 @@ class contentExtensionImportcsvIndex extends AdministrationPage
         for($offset = 0; $offset < $total; $offset += 100)
 
         {
-            $entries = EntryManager::fetch(null, $sectionID, 100, $offset, $where, $joins);
+            $entries = EntryManager::fetch(null, $sectionID, 100, $offset, $where, $joins, false, true, null, false);
             foreach ($entries as $entry) {
                 $line = array();
                 foreach ($fields as $field) {
