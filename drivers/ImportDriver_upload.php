@@ -34,11 +34,11 @@ class ImportDriver_upload extends ImportDriver_default
             $sql = 'SELECT COUNT(*) AS `total` FROM `tbl_entries_data_' . $this->field->get('id') . '` WHERE `file` = \'' . $filename . '\';';
             $total = Symphony::Database()->fetchVar('total', 0, $sql);
             if ($total == 0) {
-                $fileData = $this->field->processRawFieldData($value, $this->field->__OK__);
-                $fileData['file'] = trim($filename);
-                $fileData['size'] = filesize(DOCROOT . $destination . '/' . $value);
-                $fileData['mimetype'] = mime_content_type(DOCROOT . $destination . '/' . $value);
-                $fileData['meta'] = serialize($this->field->getMetaInfo(DOCROOT . $destination . '/' . $value, $fileData['mimetype']));
+                $fileData = $this->field->processRawFieldData(trim($value), $this->field->__OK__);
+                $fileData['file'] = trim($value);
+                $fileData['size'] = filesize(DOCROOT . $destination . '/' . trim($value));
+                $fileData['mimetype'] = mime_content_type(DOCROOT . $destination . '/' . trim($value));
+                $fileData['meta'] = serialize($this->field->getMetaInfo(DOCROOT . $destination . '/' . trim($value), $fileData['mimetype']));
 
                 return $fileData;
             } else {
@@ -48,11 +48,11 @@ class ImportDriver_upload extends ImportDriver_default
         } else {
             // File is stored in the CSV, but does not exists. Save it anyway, for database sake:
             if (!empty($value)) {
-                $fileData = $this->field->processRawFieldData($value, $this->field->__OK__);
-                $fileData['file'] = trim($filename);
-                $fileData['size'] = filesize(DOCROOT . $destination . '/' . $value);
-                $fileData['mimetype'] = ''; // mime_content_type(DOCROOT . $destination . '/' . $value);
-                $fileData['meta'] = serialize($this->field->getMetaInfo(DOCROOT . $destination . '/' . $value, $fileData['mimetype']));
+                $fileData = $this->field->processRawFieldData(trim($value), $this->field->__OK__);
+                $fileData['file'] = trim($value);
+                $fileData['size'] = filesize(DOCROOT . $destination . '/' . trim($value));
+                $fileData['mimetype'] = ''; // mime_content_type(DOCROOT . $destination . '/' . trim($value));
+                $fileData['meta'] = serialize($this->field->getMetaInfo(DOCROOT . $destination . '/' . trim($value), $fileData['mimetype']));
 
                 return $fileData;
             }
