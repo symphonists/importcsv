@@ -155,7 +155,7 @@ class parseCSV {
 	function parseCSV ($input = null, $offset = null, $limit = null, $conditions = null) {
 		if ( $offset !== null ) $this->offset = $offset;
 		if ( $limit !== null ) $this->limit = $limit;
-		if ( count($conditions) > 0 ) $this->conditions = $conditions;
+		if ( is_array($conditions) && count($conditions) > 0 ) $this->conditions = $conditions;
 		if ( !empty($input) ) $this->parse($input);
 	}
 	

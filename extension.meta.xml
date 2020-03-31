@@ -20,6 +20,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.0.5" date="2020-03-31" min="2.6.0" max="2.x.x">
+			- fix `count()` error in line 158 of the parseCSV-lib for PHP7.4
+		</release>
 		<release version="1.0.4" date="2018-01-10" min="2.6.0" max="2.x.x">
 			- Array() —> array() 
 		</release>
